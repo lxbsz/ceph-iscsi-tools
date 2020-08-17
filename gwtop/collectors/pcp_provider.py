@@ -1,4 +1,4 @@
-#!/usr/bin/env pmpython
+#!/usr/bin/env pmpython3
 
 import threading
 

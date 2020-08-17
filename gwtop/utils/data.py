@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 __author__ = 'paul'
 
 def bytes2human(in_bytes, target_unit=None):

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 __author__ = 'Paul Cuzner'
 
 import time
@@ -69,8 +69,11 @@ class TextMode(threading.Thread):
         # take the first disk we have to determine the pcp collector class
         # used, then use the methods of this class for header and row
         # detail layout
-        first_disk = disk_summary.itervalues().next()
-        collector = first_disk.collector
+        for key in disk_summary:
+            first_disk = disk_summary[key] #.items()
+            print('{}'.format(first_disk))
+            collector = first_disk.collector
+            break
 
         print("\ngwtop  {:>3} {:<8}   CPU% MIN:{:>3.0f} MAX:{:>3.0f}    "
               "Network Total In:{:>6}  Out:{:>6}"
@@ -179,7 +182,7 @@ class TextMode(threading.Thread):
                 if c == 'q':
                     break
             except KeyboardInterrupt:
-                print "breaking from thread"
+                print ("breaking from thread")
                 break
 
         self.reset()

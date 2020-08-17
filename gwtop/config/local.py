@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # get the disks available on this host
 # filter for rbd devices and return a dict of

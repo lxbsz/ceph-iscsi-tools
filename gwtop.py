@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import argparse
 import time
@@ -7,7 +7,7 @@ import logging
 import os
 import re
 
-from ConfigParser import ConfigParser
+from configparser import ConfigParser
 from threading import Event
 import threading
 
@@ -64,7 +64,7 @@ def exception_handler(exception_type, exception, traceback,
     if options.debug:
         debug_hook(exception_type, exception, traceback)
     else:
-        print "{}: {}".format(exception_type.__name__, exception)
+        print ("{}: {}".format(exception_type.__name__, exception))
 
 
 def main():
@@ -80,7 +80,7 @@ def main():
     config.gateway_config = get_gateway_info(options)
     if config.gateway_config.error:
         # Problem determining the environment, so abort
-        print "Error: Unable to determine the gateway configuration"
+        print ("Error: Unable to determine the gateway configuration")
         sys.exit(12)
 
     config.sample_interval = options.interval
